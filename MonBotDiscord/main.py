@@ -57,7 +57,7 @@ async def ban(ctx, membre: discord.Member):
     await membre.ban()
 
 @bot.command()
-@has_permissions(administrator=true)
+@has_permissions(administrator=True)
 async def unban(ctx, membre: discord.Member):
     pseudo = membre.mention
     await membre.unban()
@@ -120,5 +120,5 @@ print("Lancement du bot...")
 bot.run(getenv("TOKEN"))
 
 #run local
-"""jeton = "NzM5NDY2NTM2NzMyODUyMzQ1.Xya34A.MzJnyvGI5O_u6gXJ08DtnQr4G1o"
+"""jeton = ""
 bot.run(jeton)"""
