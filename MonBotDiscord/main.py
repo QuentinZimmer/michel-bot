@@ -50,13 +50,18 @@ async def on_raw_reaction_remove(payload):
 
 
 @bot.command()
-@has.permissions(administrator=True)
+@has_permissions(administrator=True)
 async def ban(ctx, membre: discord.Member):
     pseudo = membre.mention
     await membre.send("Vous avez été ban du serveur !")
     await membre.ban()
 
-
+@bot.command()
+@has_permissions(administrator=true)
+async def unban(ctx, membre: discord.Member):
+    pseudo = membre.mention
+    await membre.unban()
+    await ctx.send("Le membre {} a été unban !".format(pseudo))
 
 
 @bot.command()
@@ -108,6 +113,12 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("la commande est: !warning @pseudo")
 
-jeton = "NzM5NDY2NTM2NzMyODUyMzQ1.Xya34A.uQKi7P04RES6vFssqduS_0cMq3k"
+
+#run on heroku
+
 print("Lancement du bot...")
 bot.run(getenv("TOKEN"))
+
+#run local
+"""jeton = "NzM5NDY2NTM2NzMyODUyMzQ1.Xya34A.MzJnyvGI5O_u6gXJ08DtnQr4G1o"
+bot.run(jeton)"""
