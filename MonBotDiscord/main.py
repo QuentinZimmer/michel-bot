@@ -65,7 +65,7 @@ async def unban(ctx, membre: discord.Member):
     await membre.unban()
 
 @unban.error
-async def on_command_error():
+async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("la commande est: !unban @pseudo")
 
