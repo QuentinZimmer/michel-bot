@@ -49,6 +49,14 @@ async def on_raw_reaction_remove(payload):
         await membre.remove_roles(python_role)
 
 
+@bot.command()
+@has.permissions(administrator=True)
+async def ban(ctx, membre: discord.Member):
+    pseudo = membre.mention
+    await membre.send("Vous avez été ban du serveur !")
+    await membre.ban()
+
+
 
 
 @bot.command()
