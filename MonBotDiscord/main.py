@@ -3,6 +3,7 @@ from discord.utils import get
 from datetime import datetime
 from discord.ext import commands
 from discord.ext.commands import has_permissions
+
 from os import getenv
 bot = commands.Bot(command_prefix='!')
 warnings = {}
@@ -15,6 +16,12 @@ warnings = {}
 async def on_ready():
     print("Bot pret")
     await bot.change_presence(status=discord.Status.idle, activity=discord.Game("Je suis le bot de Michel"))
+
+@bot.event
+async def on_member_join(ctx, membre:discord.Member):
+    pseudo = membre.mention
+    await ctx.send(f"Bienvenue à toi {pseudo}")
+
 
 @bot.event
 async def on_raw_reaction_add(payload):
