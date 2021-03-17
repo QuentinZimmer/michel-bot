@@ -64,6 +64,10 @@ async def unban(ctx, membre: discord.Member):
     await ctx.send(f"Le membre {pseudo} a été unban !")
     await membre.unban()
 
+@unban.error
+async def on_command_error():
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("la commande est: !unban @pseudo")
 
 @bot.command()
 async def regles(ctx):
