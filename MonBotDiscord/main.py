@@ -60,8 +60,9 @@ async def ban(ctx, membre: discord.Member):
 @has_permissions(administrator=True)
 async def unban(ctx, membre: discord.Member):
     pseudo = membre.mention
-    await membre.unban()
+    
     await ctx.send("Le membre {} a été unban !".format(pseudo))
+    await membre.unban()
 
 
 @bot.command()
