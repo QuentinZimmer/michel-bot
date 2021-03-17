@@ -61,7 +61,7 @@ async def ban(ctx, membre: discord.Member):
 async def unban(ctx, membre: discord.Member):
     pseudo = membre.mention
     
-    await ctx.send("Le membre {} a été unban !".format(pseudo))
+    await ctx.send(f"Le membre {pseudo} a été unban !")
     await membre.unban()
 
 
