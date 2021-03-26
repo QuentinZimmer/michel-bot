@@ -56,10 +56,12 @@ async def on_raw_reaction_remove(payload):
         await membre.remove_roles(python_role)
 
 @bot.event
-async def on_message(ctx,message):
+async def on_message(message):
     channel = message.channel
+    isbot = message.author.bot
+    if not isbot:
 
-    await bot.send_message(channel, content = "test")
+        await bot.send_message(channel, content = "test")
 
         
 
