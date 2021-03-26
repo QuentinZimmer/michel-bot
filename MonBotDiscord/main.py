@@ -67,7 +67,7 @@ async def on_message(message):
 
 @bot.command()
 async def calc(ctx, calcul):
-    await ctx.send(eval(calcul))
+    await ctx.send(f"Le resultat est: {eval(calcul)}")
 
 
 
