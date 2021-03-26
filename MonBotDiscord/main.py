@@ -63,7 +63,7 @@ async def on_message(message):
         if "help" in message.content.lower():
             await channel.send("Hey")
 
-        
+    await bot.process_commands(message)   
 
 
 
