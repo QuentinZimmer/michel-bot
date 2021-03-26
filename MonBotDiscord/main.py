@@ -63,6 +63,7 @@ async def on_message(message):
         if message.content.lower() == "la place de la femme c'est la":
                 await channel.send("kuizine")
 
+    await bot.process_commands(message)
     
 
 @bot.command()
