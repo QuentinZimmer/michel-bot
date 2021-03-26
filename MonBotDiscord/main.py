@@ -65,6 +65,10 @@ async def on_message(message):
 
     
 
+@bot.command()
+async def calc(ctx, calcul):
+    await ctx.send(eval(calcul))
+
 
 
 @bot.command()
