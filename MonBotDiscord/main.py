@@ -59,8 +59,9 @@ async def on_raw_reaction_remove(payload):
 async def on_message(message):
     channel = message.channel
     isbot = message.author.bot
+    if not isbot:
     
-    await channel.send(message.content)
+        await channel.send(message.content)
 
     
 
