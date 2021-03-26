@@ -59,11 +59,10 @@ async def on_raw_reaction_remove(payload):
 async def on_message(message):
     channel = message.channel
     isbot = message.author.bot
-    if not isbot:
-        if "help" in message.content.lower():
-            await channel.send("Hey")
+    
+    await channel.send(message.content)
 
-    await bot.process_commands(message)   
+    
 
 
 
