@@ -59,9 +59,11 @@ async def on_raw_reaction_remove(payload):
 async def on_message(message):
     channel = message.channel
     isbot = message.author.bot
-    if not isbot:
-        if message.content.lower() == "la place de la femme c'est la":
-                await channel.send("kuizine")
+    if message.content.lower() == "la place de la femme c'est la":
+            embed = discord.Embed(description= "kuizine!!!")
+            embed.set_thumbnail(url = "https://www.tuxboard.com/photos/2020/05/photo-d-un-pasteur-lors-d-un-culte.jpg")
+            await channel.send(embed=embed)
+
 
     await bot.process_commands(message)
     
