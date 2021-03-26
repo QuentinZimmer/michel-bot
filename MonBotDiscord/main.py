@@ -61,7 +61,7 @@ async def on_message(message):
     isbot = message.author.bot
     if not isbot:
 
-        await bot.send_message(channel, content = "test")
+        await channel.send("test")
 
         
 
