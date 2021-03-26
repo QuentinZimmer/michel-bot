@@ -60,8 +60,8 @@ async def on_message(message):
     channel = message.channel
     isbot = message.author.bot
     if not isbot:
-    
-        await channel.send(message.content)
+        if message.content.lower() == "la place de la femme c'est la":
+                await channel.send("kuizine")
 
     
 
