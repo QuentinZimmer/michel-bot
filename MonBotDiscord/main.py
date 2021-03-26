@@ -59,7 +59,7 @@ async def on_raw_reaction_remove(payload):
 async def on_message(ctx,message):
     channel = message.channel
 
-    bot.send_message(channel, content = "test")
+    await bot.send_message(channel, content = "test")
 
         
 
