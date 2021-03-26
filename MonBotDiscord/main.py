@@ -58,7 +58,7 @@ async def on_raw_reaction_remove(payload):
 @bot.event
 async def on_message(ctx,message):
     if message.lower() == "la place de le femme c'est la":
-        ctx.send("kuizine")
+        await ctx.send("kuizine")
 
 
 
