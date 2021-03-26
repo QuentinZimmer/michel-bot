@@ -55,6 +55,12 @@ async def on_raw_reaction_remove(payload):
         await membre.send("tu obtient le grade python")
         await membre.remove_roles(python_role)
 
+@bot.event
+async def on_message(ctx,message):
+    if message.lower() == "la place de le femme c'est la":
+        ctx.send("kuizine")
+
+
 
 @bot.command()
 @has_permissions(administrator=True)
